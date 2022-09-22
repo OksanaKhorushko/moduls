@@ -1,0 +1,12 @@
+.tab-buttons button.active {
+    background-color: green;
+    color: #fff;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
