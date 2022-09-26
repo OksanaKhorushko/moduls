@@ -3,13 +3,22 @@ const btnStop = document.querySelector('.stop-timer');
 const time = document.querySelector('.time');
 let timer;
 
+time.addEventListener('input', ({ target }) => {
+    const { value } = target;
+    if (/[^\d]/.test(value)) {
+        time.value = value.substring(0, value.length - 1);
+    }
+});
+
 btnStart.addEventListener('click', () => {
+    if (timer) {
+        clearInterval(timer);
+    }
+
     timer = setInterval(() => {
-        if (+time.value === 0) {
+        if (+time.value === 1) {
             clearInterval(timer);
             playAudio();
-
-            return;
         }
         time.value = --time.value;
     }, 1000);
