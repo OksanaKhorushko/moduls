@@ -1,5 +1,7 @@
 import { diffDates, diffToHtml } from './modules/dateCalc.js';
 import { formatError } from './utils.js';
+import { initTabs } from './modules/tabs.js';
+import '../scss/style.scss';
 
 const dateCalcForm = document.getElementById('dateCalc');
 const dateCalcResult = document.getElementById('datecalc_result');
@@ -21,3 +23,5 @@ function handleCalcDates(event) {
         dateCalcResult.innerHTML = formatError('Для расчета промежутка необходимо заполнить оба поля');
     }
 }
+
+initTabs();
