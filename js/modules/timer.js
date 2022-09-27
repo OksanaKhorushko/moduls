@@ -1,6 +1,9 @@
+import alarm from '../../audio/timer.mp3';
+
 const btnStart = document.querySelector('.start-timer');
 const btnStop = document.querySelector('.stop-timer');
 const time = document.querySelector('.time');
+
 let timer;
 
 time.addEventListener('input', ({ target }) => {
@@ -28,7 +31,7 @@ btnStop.addEventListener('click', () => {
     clearInterval(timer);
 });
 
-const myAudioElement = new Audio('../audio/timer.mp3');
+const myAudioElement = new Audio(alarm);
 document.body.append(myAudioElement);
 
 const playAudio = () => {
